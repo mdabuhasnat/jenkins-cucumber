@@ -1,7 +1,7 @@
 version: 0.2
-env:
-  variables:
-    JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
+# env:
+#   variables:
+#     JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
 
 phases:
   install:
@@ -16,7 +16,7 @@ phases:
     commands:
       - echo Entering build phase...
       - echo Build started on `date`    
-      - mvn surefire-report:report 
+      - mvn verify
   post_build:
     commands:
       - echo Entering post_build phase...
