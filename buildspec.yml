@@ -24,5 +24,5 @@ phases:
 reports:
   SurefireReports: # CodeBuild will create a report group called "SurefireReports".
     files: #Store all of the files
-      - '**/cucumber.json'
-    base-directory: 'target/surefire-reports' # Location of the reports 
+      - '**/*'
+    base-directory: 'target/' # Location of the reports 
