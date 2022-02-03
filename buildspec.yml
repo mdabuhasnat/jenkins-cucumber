@@ -6,14 +6,13 @@ env:
 phases:
   install:
     runtime-versions:
-       java: openjdk8
-    commands:
-        - apt-get update -y
-        - apt-get install -y maven
+      java: corretto8 
+
   pre_build:
     commands:
-       - java -version
-       - mvn -version      
+      - echo Entering pre_build phase...
+      - echo Nothing to do in the pre_build phase... 
+      - mvn -version         
   build:
     commands:
       - echo Entering build phase...
