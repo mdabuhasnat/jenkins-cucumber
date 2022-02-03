@@ -7,7 +7,7 @@ phases:
   install:
     runtime-versions:
       java: corretto8 
-      
+
   pre_build:
     commands:
       - echo Entering pre_build phase...
@@ -16,8 +16,7 @@ phases:
     commands:
       - echo Entering build phase...
       - echo Build started on `date`      
-      - mvn -f pom.xml test
-      - mvn -f pom.xml package      
+      - mvn test    
   post_build:
     commands:
       - echo Entering post_build phase...
