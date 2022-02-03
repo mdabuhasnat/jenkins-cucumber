@@ -11,12 +11,13 @@ phases:
   pre_build:
     commands:
       - echo Entering pre_build phase...
-      - echo Nothing to do in the pre_build phase...          
+      - echo Nothing to do in the pre_build phase... 
+      - mvn -version         
   build:
     commands:
       - echo Entering build phase...
-      - echo Build started on `date`      
-      - mvn test    
+      - echo Build started on `date`    
+      - mvn surefire-report:report 
   post_build:
     commands:
       - echo Entering post_build phase...
@@ -24,5 +25,5 @@ phases:
 reports:
   SurefireReports: # CodeBuild will create a report group called "SurefireReports".
     files: #Store all of the files
-      - '**/*'
+      - '**/cucumber.json'
     base-directory: 'target/surefire-reports' # Location of the reports 
